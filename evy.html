@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surpresa para Evelyn</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://via.placeholder.com/1920x1080/cccccc/000000?text=Eu+te+amo+Evelyn+em+diversas+l%C3%ADnguas');
+      background-size: cover;
+      background-attachment: fixed;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 700px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
+
+    h1, p {
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 18px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ec407a;
+    }
+
+    #audio-controls {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Bem-vinda, Evelyn! 🎉</h1>
+  <p>Responda às perguntas sobre o nosso relacionamento para desbloquear uma mensagem especial.</p>
+
+  <div id="quiz-container">
+    <button onclick="startQuiz()">Começar</button>
+  </div>
+
+  <!-- Botão de Play/Pause -->
+  <div id="audio-controls">
+    <button id="audio-btn" onclick="toggleAudio()">▶️ Play Música</button>
+  </div>
+
+</div>
+
+<!-- Áudio embutido (arquivo oculto) -->
+<audio id="audio-player">
+  <source src="https://youtu.be/Y_hdQXQfsNg" type="audio/mpeg">
+  
+</audio>
+
+<script>
+  let audioPlaying = false;
+  const audioPlayer = document.getElementById('audio-player');
+  const audioBtn = document.getElementById('audio-btn');
+
+  // Função para alternar Play/Pause
+  function toggleAudio() {
+    if (!audioPlaying) {
+      audioPlayer.play();
+      audioBtn.textContent = '⏸️ Pause Música';
+    } else {
+      audioPlayer.pause();
+      audioBtn.textContent = '▶️ Play Música';
+    }
+    audioPlaying = !audioPlaying;
+  }
+
+  // Função para iniciar o quiz (mantém original para placeholders)
+  function startQuiz() {
+    document.getElementById('quiz-container').innerHTML = '<h2>Pergunta 1: Onde foi nosso primeiro encontro?</h2><button>Resposta 1</button>';
+  }
+</script>
+
+</body>
+</html>
